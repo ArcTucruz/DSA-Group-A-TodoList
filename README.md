@@ -11,4 +11,4 @@ Features:
 - Creating a to-do list
 - Creating a Habit list
 - Shows a real-time date
-- 
+- Shows a list of activities that the user has inputted
