@@ -7,10 +7,9 @@
 #include <string>
 using namespace std;
 
-/* ==================  3 =================== */  
 struct todoList{
-    int list_day, list_month, list_year, list_hour, list_minute;
-    string list_title, list_desc;
+    int dayList, monthList, yearList, hourList, minuteList;
+    string titleList, descList;
     struct todoList *next;
 };
 
@@ -29,19 +28,18 @@ class List{
 
 
 void List:: insertList (struct todoList** headRef, int day, int month, int year, int hour, int minute, string title, string desc){
-    todoList* new_list = new todoList();
-    new_list->list_title = title;
-    new_list->list_day = day;
-    new_list->list_month = month;
-    new_list->list_year = year;
-    new_list->list_hour = hour;
-    new_list->list_minute = minute;
-    new_list->list_desc = desc;
-    new_list->next = (*headRef);
-    (*headRef) = new_list;    
+    todoList* newList = new todoList();
+    newList->titleList = title;
+    newList->dayList = day;
+    newList->monthList = month;
+    newList->yearList = year;
+    newList->hourList = hour;
+    newList->minuteList = minute;
+    newList->descList = desc;
+    newList->next = (*headRef);
+    (*headRef) = newList;    
 }
 
-/* ==================  4 =================== */  
 void List::deleteList(struct todoList **headRef, int position){
     if (*headRef == NULL){
         return;
@@ -65,16 +63,14 @@ void List::deleteList(struct todoList **headRef, int position){
 
 void List::displayList (struct todoList* list){
     int i = 1;
-
     if(list == NULL){
-       cout<<"There is nothing here! Plan something!"<<endl; 
+       cout<<"Empty"<<endl; 
     }
-
     while(list!=NULL){
-        printf("%d) %.2d-%.2d-%d\n",i, list->list_day,list->list_month,list->list_year);
-        cout<<list->list_title;
-        printf(" (%.2d:%.2d)\n", list->list_hour, list->list_minute);
-        cout<<list->list_desc<<endl;
+        printf("%d) %.2d-%.2d-%d\n",i, list->dayList,list->monthList,list->yearList);
+        cout<<list->titleList;
+        printf(" (%.2d:%.2d)\n", list->hourList, list->minuteList);
+        cout<<list->descList<<endl;
         list = list->next;
         cout<<"\n";
         i++;
@@ -82,7 +78,7 @@ void List::displayList (struct todoList* list){
     cout<<"\n";
 }
 
-/* ==================  5  =================== */  
+/*
 void List::sortlist(struct todoList *unsorted_node){
     struct todoList *current = unsorted_node, *index = NULL;
     int tempYear, tempMonth, tempDay, tempHour, tempMinute;
@@ -91,113 +87,113 @@ void List::sortlist(struct todoList *unsorted_node){
     while(current!=NULL){
         index = current->next;
         while (index!=NULL){
-            if(current->list_year > index->list_year){
-             tempYear = current->list_year;
-                current->list_year = index->list_year;
-                index->list_year = tempYear;
+            if(current->yearList > index->yearList){
+             tempYear = current->yearList;
+                current->yearList = index->yearList;
+                index->yearList = tempYear;
 
-                tempMonth = current->list_month;
-                current->list_month = index->list_month;
-                index->list_month = tempMonth;
+                tempMonth = current->monthList;
+                current->monthList = index->monthList;
+                index->monthList = tempMonth;
 
-                tempDay = current->list_day;
-                current->list_day = index->list_day;
-                index->list_day = tempDay;
+                tempDay = current->dayList;
+                current->dayList = index->dayList;
+                index->dayList = tempDay;
                 
-                tempHour = current->list_hour;
-                current->list_hour = index->list_hour;
-                index->list_minute = tempHour;
+                tempHour = current->hourList;
+                current->hourList = index->hourList;
+                index->minuteList = tempHour;
                 
-                tempMinute = current->list_minute;
-                current->list_minute = index->list_minute;
-                index->list_minute = tempMinute;
+                tempMinute = current->minuteList;
+                current->minuteList = index->minuteList;
+                index->minuteList = tempMinute;
                 
-                temp_title = current->list_title;
-                current->list_title = index->list_title;
-                index->list_title = temp_title;
+                temp_title = current->titleList;
+                current->titleList = index->titleList;
+                index->titleList = temp_title;
                 
-                temp_desc = current->list_desc;
-                current->list_desc = index->list_desc;
-                index->list_desc = temp_desc;
-            } else if(current->list_year == index->list_year && current->list_month > index->list_month){
+                temp_desc = current->descList;
+                current->descList = index->descList;
+                index->descList = temp_desc;
+            } else if(current->yearList == index->yearList && current->monthList > index->monthList){
                 
-                tempMonth = current->list_month;
-                current->list_month = index->list_month;
-                index->list_month = tempMonth;
+                tempMonth = current->monthList;
+                current->monthList = index->monthList;
+                index->monthList = tempMonth;
 
-                tempDay = current->list_day;
-                current->list_day = index->list_day;
-                index->list_day = tempDay;
+                tempDay = current->dayList;
+                current->dayList = index->dayList;
+                index->dayList = tempDay;
                 
-                tempHour = current->list_hour;
-                current->list_hour = index->list_hour;
-                index->list_minute = tempHour;
+                tempHour = current->hourList;
+                current->hourList = index->hourList;
+                index->minuteList = tempHour;
                 
-                tempMinute = current->list_minute;
-                current->list_minute = index->list_minute;
-                index->list_minute = tempMinute;
+                tempMinute = current->minuteList;
+                current->minuteList = index->minuteList;
+                index->minuteList = tempMinute;
                 
-                temp_title = current->list_title;
-                current->list_title = index->list_title;
-                index->list_title = temp_title;
+                temp_title = current->titleList;
+                current->titleList = index->titleList;
+                index->titleList = temp_title;
                 
-                temp_desc = current->list_desc;
-                current->list_desc = index->list_desc;
-                index->list_desc = temp_desc;
+                temp_desc = current->descList;
+                current->descList = index->descList;
+                index->descList = temp_desc;
                 
-            } else if(current->list_year == index->list_year && current->list_month == index->list_month && current->list_day > index->list_day){
+            } else if(current->yearList == index->yearList && current->monthList == index->monthList && current->dayList > index->dayList){
                 
-                tempDay = current->list_day;
-                current->list_day = index->list_day;
-                index->list_day = tempDay;
+                tempDay = current->dayList;
+                current->dayList = index->dayList;
+                index->dayList = tempDay;
                 
-                tempHour = current->list_hour;
-                current->list_hour = index->list_hour;
-                index->list_minute = tempHour;
+                tempHour = current->hourList;
+                current->hourList = index->hourList;
+                index->minuteList = tempHour;
                 
-                tempMinute = current->list_minute;
-                current->list_minute = index->list_minute;
-                index->list_minute = tempMinute;
+                tempMinute = current->minuteList;
+                current->minuteList = index->minuteList;
+                index->minuteList = tempMinute;
                 
-                temp_title = current->list_title;
-                current->list_title = index->list_title;
-                index->list_title = temp_title;
+                temp_title = current->titleList;
+                current->titleList = index->titleList;
+                index->titleList = temp_title;
                 
-                temp_desc = current->list_desc;
-                current->list_desc = index->list_desc;
-                index->list_desc = temp_desc;
+                temp_desc = current->descList;
+                current->descList = index->descList;
+                index->descList = temp_desc;
                 
-            } else if(current->list_year == index->list_year && current->list_month == index->list_month && current->list_day == index->list_day && current->list_hour > index->list_hour){
+            } else if(current->yearList == index->yearList && current->monthList == index->monthList && current->dayList == index->dayList && current->hourList > index->hourList){
                
-                tempHour = current->list_hour;
-                current->list_hour = index->list_hour;
-                index->list_minute = tempHour;
+                tempHour = current->hourList;
+                current->hourList = index->hourList;
+                index->minuteList = tempHour;
                 
-                tempMinute = current->list_minute;
-                current->list_minute = index->list_minute;
-                index->list_minute = tempMinute;
+                tempMinute = current->minuteList;
+                current->minuteList = index->minuteList;
+                index->minuteList = tempMinute;
                 
-                temp_title = current->list_title;
-                current->list_title = index->list_title;
-                index->list_title = temp_title;
+                temp_title = current->titleList;
+                current->titleList = index->titleList;
+                index->titleList = temp_title;
                 
-                temp_desc = current->list_desc;
-                current->list_desc = index->list_desc;
-                index->list_desc = temp_desc;
+                temp_desc = current->descList;
+                current->descList = index->descList;
+                index->descList = temp_desc;
                 
-            } else if(current->list_year == index->list_year && current->list_month == index->list_month && current->list_day == index->list_day && current->list_hour == index->list_hour && current->list_minute > index->list_minute){
+            } else if(current->yearList == index->yearList && current->monthList == index->monthList && current->dayList == index->dayList && current->hourList == index->hourList && current->minuteList > index->minuteList){
                 
-                tempMinute = current->list_minute;
-                current->list_minute = index->list_minute;
-                index->list_minute = tempMinute;
+                tempMinute = current->minuteList;
+                current->minuteList = index->minuteList;
+                index->minuteList = tempMinute;
                 
-                temp_title = current->list_title;
-                current->list_title = index->list_title;
-                index->list_title = temp_title;
+                temp_title = current->titleList;
+                current->titleList = index->titleList;
+                index->titleList = temp_title;
                 
-                temp_desc = current->list_desc;
-                current->list_desc = index->list_desc;
-                index->list_desc = temp_desc;                
+                temp_desc = current->descList;
+                current->descList = index->descList;
+                index->descList = temp_desc;                
             }
             index = index->next;
         }
@@ -205,7 +201,7 @@ void List::sortlist(struct todoList *unsorted_node){
     }
 }
 
-/* ==================  6  =================== */  
+
 void displayStackList (stack <struct habitList> stacks){
 	if(stacks.empty()){
 		cout<<"There is nothing here! Plan something!"<<endl;
@@ -219,6 +215,6 @@ void displayStackList (stack <struct habitList> stacks){
         cout<<"\n";
     }
 }
-
+*/
 
 #endif
