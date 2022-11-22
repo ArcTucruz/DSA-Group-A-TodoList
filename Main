@@ -1,49 +1,48 @@
 #include <iostream>
 #include <stack>
 #include <time.h>
-#include <cstlib>
+#include <cstdlib>
 #include <string>
 #include "list.h"
 using namespace std;
 
-int main(){
-    /* ==================  1 =================== */  
+int main() {
     int day, month, year, hour, minute, num, menu, deleteNumber;
     char sub_menu, again;
     string title, name, desc;
-    todoList *new_node = NULL;
+    todoList *new_node = NULL; // pointer (before midterm)
 
-    stack <habitList> stacks;
+    stack <habitList> stacks; // stacks (after midterm)
     stack <habitList> restacks;
     habitList habitList;
-
+    
     List list; 
 
     char currDate[30];
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
     
-    cout<<"Welcome to My-ToDoList"<<"\n\n";
-    cout<<"What is your name? ";
+    cout << "\nWelcome to My-ToDoList" << "\n\n";
+    cout << "What is your name?\n=> Please enter your name: ";
     getline(cin, name);
     
-    cout<<"Hi, "+name+"!"<<endl;
-	sprintf(currDate, "%d-%d-%d", tm.tm_mday, tm.tm_mon+1, tm.tm_year+1900);
-    cout<<currDate<<"\n\n";
-	
-	cout<<"Here are the instructions to use this app:\n"<<endl;
-	
+    cout << "Hi, "+name+"!" << endl;
+    sprintf(currDate, "%d-%d-%d", tm.tm_mday, tm.tm_mon+1, tm.tm_year+1900);
+    cout << currDate << "\n\n";
+
+    cout<<"Here are the instructions to use this app:\n"<<endl;
+
     cout<<"[1] Create new todo-list"<<endl;
     cout<<"[2] Create Habit List"<<endl;
     cout<<"[3] Show my list"<<endl;
     cout<<"[4] Delete todo-list"<<endl;
     cout<<"[5] Delete habit-list"<<endl;
-	cout<<"[0] Exit"<<endl;
-	cout<<"Enter Command: ";
-	cin>>menu;
-	cout<<"\n\n";
-	
-	if(menu==0){
-		cout<<"Thank you for using our program!";
-		return 0;
-	}
+    cout<<"[0] Exit"<<endl;
+    cout<<"\nEnter Command: ";
+    cin>>menu;
+    cout<<"\n";
+
+    if(menu==0){
+        cout<<"Thank you for using our program!";
+        return 0;
+    }
