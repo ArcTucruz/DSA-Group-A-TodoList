@@ -11,11 +11,9 @@ int main() {
     char sub_menu, again;
     string title, name, desc;
     todoList *new_node = NULL; // pointer (before midterm)
-
     stack <habitList> stacks; // stacks (after midterm)
     stack <habitList> restacks;
     habitList habitList;
-    
     List list; 
 
     char currDate[30];
@@ -46,3 +44,5 @@ int main() {
         cout<<"Thank you for using our program!";
         return 0;
     }
+
+}
