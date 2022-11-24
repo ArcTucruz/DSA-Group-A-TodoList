@@ -15,11 +15,11 @@ Member:
 4. Shows a list of activities that the user has inputted
 
 ## List Project Grading
-[x] One of the before midterm chapters must be used in your program (Queue, linked list, pointer) (10 points)
-[x] One of the after midterm chapters must be used in your program (Tree, graphs, stacks) (10 points)
-[x] The systems must be in a class format (15 points)
-[] Video of demonstration with explanation (40 points)
-[] Report explanation (25 points)
+- [X] One of the before midterm chapters must be used in your program (Queue, linked list, pointer) (10 points)
+- [X] One of the after midterm chapters must be used in your program (Tree, graphs, stacks) (10 points)
+- [X] The systems must be in a class format (15 points)
+- [] Video of demonstration with explanation (40 points)
+- [] Report explanation (25 points)
 
 
 ## The teamwork Section: 
