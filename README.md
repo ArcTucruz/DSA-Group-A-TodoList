@@ -1,6 +1,6 @@
-# A To-Do List created by the member of Group 1 of Data Structures And Algorithms.
-** Data Structures and Algorithm Group 1 **
-Member:
+# A To-Do List Program
+** created by the member of Group 1 of Data Structures And Algorithms **
+- Member:
 1. Ahmad Nurfais (2021390009)
 2. Andi Muhammad Imam Akbar (202140001)
 3. Dicky Aditrianza (2021390006)
