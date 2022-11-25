@@ -203,7 +203,6 @@ void List::sortList(struct todoList *unsorted_node) {
     }
 }
 
-
 void displayStackList (stack <struct habitList> stacks){
 	if(stacks.empty()){
 		cout<<"You haven't planned anything yet!"<<endl;
@@ -217,6 +216,21 @@ void displayStackList (stack <struct habitList> stacks){
         cout<<"\n";
     }
 }
+void displayStackList (stack <struct habitList> stacks)
+{
+	if(stacks.empty())
+	{
+		cout<<"There's Nothing Here. Plans something!"<<endl;
+		}
+	int i = 1;
+	while(!stacks.empty())
+	{
+		cout << i <<"] "<< stacks.top().habitTitle <<endl;
+		cout<<"Description: "<< stacks.top().habitDescription<<endl;
+		i++;
+		stacks.pop();
+		cout<<"\n";
+	}
 
 
 #endif
