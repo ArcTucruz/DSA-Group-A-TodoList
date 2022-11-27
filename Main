@@ -20,7 +20,9 @@ int main() {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
     
-    cout << "\nWelcome to My-ToDoList app" << "\n\n";
+    cout << "+-------------------------------+" << "\n";
+    cout << "+    Welcome to My-ToDoList     +" << "\n";
+    cout << "+-------------------------------+" << "\n\n";
     cout << "What is your name?\n=> Please enter your name: ";
     getline(cin, name);
     
