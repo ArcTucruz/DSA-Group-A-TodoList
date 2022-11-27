@@ -30,11 +30,11 @@ int main() {
 
     cout<<"Instruction:\n"<<endl;
 
-    cout<<"[1] Create new todo-list"<<endl;
+    cout<<"[1] Create New to do-List"<<endl;
     cout<<"[2] Create Habit List"<<endl;
-    cout<<"[3] Show my list"<<endl;
-    cout<<"[4] Delete todo-list"<<endl;
-    cout<<"[5] Delete habit-list"<<endl;
+    cout<<"[3] Show my List"<<endl;
+    cout<<"[4] Delete to do-List"<<endl;
+    cout<<"[5] Delete Habit-List"<<endl;
     cout<<"[0] Exit"<<endl;
     cout<<"\nEnter Command: ";
     cin>>menu;
