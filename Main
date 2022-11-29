@@ -87,7 +87,6 @@ int main(){
 						return 0;
 					}
 				}
-				
 				cout<<"--------------------------\n";
 				cout<<"INFORMATION: \t"<<endl;
 				cin.ignore();
