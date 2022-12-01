@@ -170,7 +170,7 @@ int main(){
 			}
 		}
 	}
-		cout<<"!Lets Review!\n"<<endl;
+		cout<<"\n!Lets Review!\n"<<endl;
     	cout<<"[1] Create New ToDo-List"<<endl;
     	cout<<"[2] Create Priority List"<<endl;
     	cout<<"[3] Show My List"<<endl;
