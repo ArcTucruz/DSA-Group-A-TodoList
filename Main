@@ -1,13 +1,14 @@
 #include <iostream>
 #include <stack>
 #include <time.h>
-#include <cstdlib>
 #include <string>
+#include <cstdlib>
 #include "list.h"
 using namespace std;
 
 int main(){
-    int day, month, year, hour, minute, num, menu, deleteNumber;
+    int day, month, year, hour, minute, menu, deleteNumber;
+	double num;
     char sub_menu, again;
     string title, name, desc;
     todoList *new_node = NULL; // pointer (before midterm)
@@ -46,24 +47,30 @@ int main(){
 	while(menu!=0){
 	switch (menu){
 		case 1:{
-			cout<<"No. of Notes: ";
-			cin>>num;
+			cout <<"=> Number of Notes: ";
+			cin >> num;
+			if(num <= 100){
+				cout << "";
+			} else if (num > 100){
+				cout << "Error: Too many notes!" << endl;
+				cout << "=> Return to main menu" << endl << endl;
+				break;
+			} 
 			cin.ignore();
-			
+
 			for(int i=0;i<num;i++){
-				cout<<"TITLE: ";
+				cout<<"=> TITLE: ";
 				getline(cin,title);
 				
-				cout<<"--------------------------\n";
-				cout<<"dd/mm/yyyy"<<endl;
-				cout<<"DATE: ";
+				cout<<"=> DATE ";
+				cout<<"(dd/mm/yyyy): ";
 				scanf("%d/%d/%d", &day, & month, &year);
 				
 				if(day>31||month>12){
 					cout<<"\nWhich Planet Time Do You Belong to?";
 					cout<<"\nOur's is within 31 days and 12 month, retry!\n"<<endl;
-					cout<<"dd/mm/yyyy"<<endl;
-					cout<<"DATE: ";
+					cout<<"=> DATE ";
+					cout<<"(dd/mm/yyyy): ";
 					scanf("%d/%d/%d", &day, & month, &year);
 					if(0>=day||0>=month){
 						cout<<"?STOP, Retry!";
@@ -71,24 +78,22 @@ int main(){
 					}
 				}
 				
-				cout<<"--------------------------\n";
-				cout<<"hh:mm"<<endl;
-				cout<<"TIME: ";
+				cout<<"=> TIME: ";
+				cout<<"(hh:mm): ";
 				scanf("%d:%d", &hour, &minute);
 				
 				if(hour>23||minute>59){
 					cout<<"\nWhich Planet Time Do You Belong to?";
 					cout<<"\nOur's is within 23 hours and 59 minute, retry!\n"<<endl;
-					cout<<"hh:mm"<<endl;
-					cout<<"TIME: ";
+					cout<<"=> TIME: ";
+					cout<<"(hh:mm): ";
 					scanf("%d:%d", &hour, &minute);
 					if(0>hour||0>minute){
 						cout<<"?STOP, Retry!";
 						return 0;
 					}
 				}
-				cout<<"--------------------------\n";
-				cout<<"INFORMATION: \t"<<endl;
+				cout<<"=> Description: ";
 				cin.ignore();
 				getline(cin,desc);
 				cout<<"--------------------------\n";
@@ -107,7 +112,7 @@ int main(){
 				cout<<j<<"] TITLE: ";
 				cin.ignore();
 				getline(cin,title);
-				cout<<"INFO: ";
+				cout<<"=> INFO: ";
 				getline(cin,desc);
 				cout<<endl;
 				
