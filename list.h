@@ -67,10 +67,11 @@ void List::displayList (struct todoList* list){
        cout<<"You haven't planned anything yet!"<<endl;
     }
     while(list != NULL){
-        printf("%d) %.2d-%.2d-%d\n",i, list->dayList,list->monthList,list->yearList);
-        cout<<list->titleList;
-        printf(" (%.2d:%.2d)\n", list->hourList, list->minuteList);
-        cout<<list->noteList<<endl;
+        printf("%d) %.2d/%.2d/%d\n",i, list->dayList,list->monthList,list->yearList);
+        cout << "=> Title: " << list->titleList;
+        printf("\n=> Time: (%.2d:%.2d)", list->hourList, list->minuteList);
+        cout << "\n=> Description: "<< list->noteList;
+        cout<<"\n";
         list = list->next;
         cout<<"\n";
         i++;
