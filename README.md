@@ -10,7 +10,7 @@
 
 ## Features:
 1. Creating a to-do list
-2. Creating a Habit list
+2. Creating a Priority list
 3. Shows a real-time date
 4. Shows a list of activities that the user has inputted
 
