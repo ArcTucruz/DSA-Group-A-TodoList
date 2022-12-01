@@ -13,9 +13,9 @@ struct todoList{
     struct todoList *next;
 };
 
-struct habitList{
-    string habitTitle;
-    string habitNote;
+struct PriorityList{
+    string PriorityTitle;
+    string PriorityNote;
 };
 
 class List{
@@ -202,7 +202,7 @@ void List::sortList(struct todoList *unsorted_node) {
         current = current -> next;
     }
 }
-void displayStackList (stack <struct habitList> stacks){
+void displayStackList (stack <struct PriorityList> stacks){
 
 	if(stacks.empty())
 	{
@@ -211,8 +211,9 @@ void displayStackList (stack <struct habitList> stacks){
 	int i = 1;
 	while(!stacks.empty())
 	{
-		cout << i <<"] "<< stacks.top().habitTitle <<endl;
-		cout<<"Description: "<< stacks.top().habitNote<<endl;
+		cout << "[";
+		cout << i <<"] "<< stacks.top().PriorityTitle <<endl;
+		cout<<"Description: "<< stacks.top().PriorityNote<<endl;
 		i++;
 		stacks.pop();
 		cout<<"\n";
